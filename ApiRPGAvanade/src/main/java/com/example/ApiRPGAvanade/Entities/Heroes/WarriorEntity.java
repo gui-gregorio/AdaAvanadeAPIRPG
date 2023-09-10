@@ -6,10 +6,10 @@ import jakarta.persistence.Entity;
 import lombok.NoArgsConstructor;
 
 @Entity
-@DiscriminatorValue("Warrior")
+@DiscriminatorValue("warrior")
 @NoArgsConstructor
 
-class WarriorEntity extends CharacterEntity{
+public class WarriorEntity extends CharacterEntity{
     public WarriorEntity(String name){
       super(name);
       this.setHp(20);

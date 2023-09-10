@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "giant")
 @NoArgsConstructor
+@DiscriminatorValue("giant")
 
-class GiantEntity extends CharacterEntity {
+public class GiantEntity extends CharacterEntity {
     public GiantEntity(String name){
         super(name);
         this.setHp(34);

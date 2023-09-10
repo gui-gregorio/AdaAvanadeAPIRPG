@@ -1,0 +1,36 @@
+GET http://localhost:8080/api/test/getAllRecords
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-09-09T183551.200.json
+
+###
+
+GET http://localhost:8080/api/test/getAllRecords
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-09-09T183550.200.json
+
+###
+
+GET http://localhost:8080/api/test/getAllRecords
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-09-09T183548.200.json
+
+###
+
+GET http://localhost:8080/api/test/getAllRecords
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-09-09T174812.200.json
+
+###
+

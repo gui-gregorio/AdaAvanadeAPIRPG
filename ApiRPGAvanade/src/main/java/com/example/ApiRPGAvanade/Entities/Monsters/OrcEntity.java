@@ -6,11 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="orc")
 @NoArgsConstructor
+@DiscriminatorValue("orc")
 
 
-class OrcEntity extends CharacterEntity {
+public class OrcEntity extends CharacterEntity {
     public OrcEntity(String name){
         super(name);
         setHp(42);
