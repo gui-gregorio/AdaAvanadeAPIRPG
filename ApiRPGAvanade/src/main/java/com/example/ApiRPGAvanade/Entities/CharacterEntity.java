@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @DiscriminatorColumn(name = "character_type")
 @NoArgsConstructor
 
-public abstract class CharacterEntity {
+public class CharacterEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

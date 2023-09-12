@@ -9,6 +9,6 @@ import java.util.List;
 public class PlayerDTO {
     private String name;
     private String email;
-    private List<CharacterDTO> characters;
+    private String password;
 
 }
