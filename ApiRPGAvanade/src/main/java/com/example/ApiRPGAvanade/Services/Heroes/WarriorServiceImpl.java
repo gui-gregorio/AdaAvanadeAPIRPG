@@ -4,11 +4,12 @@ import com.example.ApiRPGAvanade.Entities.Heroes.WarriorEntity;
 import com.example.ApiRPGAvanade.Repositories.Heroes.WarriorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @AllArgsConstructor
-@Component
+@Service
 public class WarriorServiceImpl implements WarriorService {
     private final WarriorRepository warriorRepository;
 

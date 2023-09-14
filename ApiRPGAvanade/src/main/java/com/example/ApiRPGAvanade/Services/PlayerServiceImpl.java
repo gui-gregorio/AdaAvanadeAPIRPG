@@ -5,14 +5,16 @@ import com.example.ApiRPGAvanade.Entities.PlayerEntity;
 import com.example.ApiRPGAvanade.Mappers.CharacterMapper;
 import com.example.ApiRPGAvanade.Repositories.CharacterRepository;
 import com.example.ApiRPGAvanade.Repositories.PlayerRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
-@Service
+
 @RequiredArgsConstructor
+@Service
 public class PlayerServiceImpl implements PlayerService {
     private final PasswordEncoderService passwordEncoderService;
     private final PlayerRepository playerRepository;
@@ -40,6 +42,11 @@ public class PlayerServiceImpl implements PlayerService {
         player.getCharacters().add(newCharacter);
         characterRepository.save(newCharacter);
         return playerRepository.save(player);
+    }
+
+    @Override
+    public PlayerEntity getById(UUID id){
+        return playerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Player not found"));
     }
 
 }

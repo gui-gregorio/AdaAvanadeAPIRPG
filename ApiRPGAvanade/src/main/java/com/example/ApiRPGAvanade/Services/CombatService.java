@@ -1,33 +1,16 @@
 package com.example.ApiRPGAvanade.Services;
 
 import com.example.ApiRPGAvanade.Entities.CharacterEntity;
-import org.springframework.stereotype.Service;
+import com.example.ApiRPGAvanade.Entities.CombatEntity;
 
-import java.util.Random;
+import java.util.List;
 
-@Service
-public class CombatService {
-    private final Random random = new Random();
+public interface CombatService {
+    int calculateAttackValue(CharacterEntity character);
+    int calculateDefenseValue(CharacterEntity character);
+    int calculateDamage(CharacterEntity attacker, int defenseValue, int attackValue);
+    List<CombatEntity> getCombatHistoryForCharacter(Long characterId);
+    List<CombatEntity> getCombatHistoryByHeroAndMonster(Long heroId, Long monsterId);
 
-    public int calculateAttackValue(CharacterEntity character) {
-        int diceRoll = random.nextInt(12) + 1;
-        return diceRoll + character.getStr() + character.getAgi();
-    }
-
-    public int calculateDefenseValue(CharacterEntity defender) {
-        int diceRoll = random.nextInt(12) + 1;
-        return diceRoll + defender.getDef() + defender.getAgi();
-    }
-    public int calculateDamage(CharacterEntity attacker, int defenseValue, int attackValue) {
-        if (defenseValue < attackValue) {
-            int totalDamageRoll = 0;
-            for (int i = 0; i < attacker.getDices(); i++) {
-                totalDamageRoll += random.nextInt(attacker.getFaces()) + 1;
-            }
-            return totalDamageRoll + attacker.getStr();
-        }
-        return 0;
-    }
+    public CombatEntity simulateCombat(CharacterEntity attacker, CharacterEntity defender);
 }
-
-

@@ -23,6 +23,6 @@ public class BarbarianController {
 
     @PostMapping()
     public BarbarianEntity createBarbarian(@RequestBody CharacterDTO characterDTO){
-        return barbarianService.createBarbarian(characterDTO.getName());
+        return barbarianService.createBarbarian(characterDTO);
     }
 }

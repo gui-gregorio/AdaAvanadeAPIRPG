@@ -12,5 +12,6 @@ public interface PlayerService {
     List<PlayerEntity>getAllRecords();
     PlayerEntity savePlayer(PlayerEntity playerEntity, String rawPassword, String name);
     PlayerEntity addCharacter(UUID playerId, CharacterDTO characterDTO);
+    PlayerEntity getById(UUID id);
 
 }

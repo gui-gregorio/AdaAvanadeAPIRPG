@@ -2,7 +2,9 @@ package com.example.ApiRPGAvanade.Controllers;
 
 
 import com.example.ApiRPGAvanade.DTOS.CharacterDTO;
-import com.example.ApiRPGAvanade.DTOS.PlayerDTO;
+import com.example.ApiRPGAvanade.DTOS.PlayerCreateDTO;
+import com.example.ApiRPGAvanade.DTOS.PlayerResponseDTO;
+import com.example.ApiRPGAvanade.Entities.CharacterEntity;
 import com.example.ApiRPGAvanade.Entities.PlayerEntity;
 import com.example.ApiRPGAvanade.Mappers.PlayerMapper;
 import com.example.ApiRPGAvanade.Services.PlayerService;
@@ -21,21 +23,22 @@ public class PlayerController {
     private final PlayerMapper playerMapper;
 
     @GetMapping()
-    public List<PlayerDTO> getPlayers(){
+    public List<PlayerResponseDTO> getPlayers(){
         List<PlayerEntity> players = playerService.getAllRecords();
-        return players.stream().map(playerMapper::toDTO)
+        return players.stream()
+                .map(playerMapper::toResponseDTO)
                 .collect(Collectors.toList());
     }
 
     @PostMapping()
-    public PlayerDTO createPlayer(@RequestBody PlayerDTO playerDTO){
-        PlayerEntity playerEntity = playerMapper.toEntity(playerDTO);
-        PlayerEntity savedEntity = playerService.savePlayer(playerEntity, playerDTO.getPassword(), playerDTO.getName());
+    public PlayerCreateDTO createPlayer(@RequestBody PlayerCreateDTO playerCreateDTO){
+        PlayerEntity playerEntity = playerMapper.toEntity(playerCreateDTO);
+        PlayerEntity savedEntity = playerService.savePlayer(playerEntity, playerCreateDTO.getPassword(), playerCreateDTO.getName());
         return playerMapper.toDTO(savedEntity);
     }
 
     @PatchMapping("{playerId}")
-    public PlayerDTO addCharacter(@PathVariable UUID playerId, @RequestBody CharacterDTO characterDTO){
+    public PlayerCreateDTO addCharacter(@PathVariable UUID playerId, @RequestBody CharacterDTO characterDTO){
         PlayerEntity updatedPlayer = playerService.addCharacter(playerId, characterDTO);
         return playerMapper.toDTO(updatedPlayer);
     }

@@ -3,11 +3,12 @@ import com.example.ApiRPGAvanade.Entities.Monsters.OrcEntity;
 import com.example.ApiRPGAvanade.Repositories.Monsters.OrcRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @AllArgsConstructor
-@Component
-
+@Service
 public class OrcServiceImpl implements OrcService {
     private final OrcRepository orcRepository;
 

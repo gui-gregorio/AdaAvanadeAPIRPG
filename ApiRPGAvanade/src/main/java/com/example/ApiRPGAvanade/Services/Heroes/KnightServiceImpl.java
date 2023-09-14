@@ -3,12 +3,12 @@ import com.example.ApiRPGAvanade.Entities.Heroes.KnightEntity;
 import com.example.ApiRPGAvanade.Repositories.Heroes.KnightRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @AllArgsConstructor
-@Component
-
+@Service
 public class KnightServiceImpl implements KnightService {
     private final KnightRepository knightRepository;
 

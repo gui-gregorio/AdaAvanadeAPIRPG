@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
 public interface WerewolfService {
     List<WerewolfEntity>getAllRecords();
     WerewolfEntity createWerewolf(String name);

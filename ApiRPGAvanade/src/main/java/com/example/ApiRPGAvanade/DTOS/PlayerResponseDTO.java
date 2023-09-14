@@ -1,14 +1,12 @@
 package com.example.ApiRPGAvanade.DTOS;
-
-import com.example.ApiRPGAvanade.Entities.CharacterEntity;
 import lombok.Data;
-
 import java.util.List;
 
+
 @Data
-public class PlayerDTO {
+public class PlayerResponseDTO {
     private String name;
     private String email;
-    private String password;
+    private List<CharacterResponseDTO> characters;
 
 }

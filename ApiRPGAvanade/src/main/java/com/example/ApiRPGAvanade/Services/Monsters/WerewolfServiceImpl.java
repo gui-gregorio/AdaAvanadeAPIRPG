@@ -4,10 +4,12 @@ import com.example.ApiRPGAvanade.Entities.Monsters.WerewolfEntity;
 import com.example.ApiRPGAvanade.Repositories.Monsters.WerewolfRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Component
+
 @AllArgsConstructor
+@Service
 public class WerewolfServiceImpl implements WerewolfService{
     private final WerewolfRepository werewolfRepository;
 

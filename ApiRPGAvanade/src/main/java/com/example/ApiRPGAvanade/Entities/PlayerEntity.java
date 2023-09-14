@@ -1,6 +1,7 @@
 package com.example.ApiRPGAvanade.Entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,5 +27,6 @@ public class PlayerEntity {
     private String hashedPassword;
     @Column (nullable = true)
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "player", fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<CharacterEntity>characters = new ArrayList<>();
 }

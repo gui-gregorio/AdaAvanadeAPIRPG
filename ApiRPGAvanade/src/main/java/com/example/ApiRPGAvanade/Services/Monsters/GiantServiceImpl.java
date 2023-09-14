@@ -3,11 +3,12 @@ import com.example.ApiRPGAvanade.Entities.Monsters.GiantEntity;
 import com.example.ApiRPGAvanade.Repositories.Monsters.GiantRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @AllArgsConstructor
-@Component
-
+@Service
 public class GiantServiceImpl implements GiantService{
     private final GiantRepository giantRepository;
     @Override

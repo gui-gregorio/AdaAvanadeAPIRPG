@@ -2,14 +2,11 @@ package com.example.ApiRPGAvanade.DTOS;
 
 import lombok.Data;
 
-import java.util.UUID;
+
 
 @Data
-
-public class CharacterDTO {
+public class CharacterEntityDTO {
     private Long id;
-    private UUID playerId;
-    private String playerName;
     private String name;
     private Integer hp;
     private Integer str;
@@ -17,5 +14,4 @@ public class CharacterDTO {
     private Integer agi;
     private Integer dices;
     private Integer faces;
-
 }
