@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ApiRPGAvanade.iml" filepath="$PROJECT_DIR$/.idea/ApiRPGAvanade.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.example.ApiRPGAvanade.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.example.ApiRPGAvanade.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.example.ApiRPGAvanade.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.example.ApiRPGAvanade.test.iml" />
     </modules>
   </component>
 </project>

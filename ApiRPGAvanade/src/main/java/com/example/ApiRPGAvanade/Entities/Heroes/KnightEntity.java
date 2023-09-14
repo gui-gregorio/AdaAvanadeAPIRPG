@@ -6,10 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "knight")
 @NoArgsConstructor
+@DiscriminatorValue("knight")
 
-class KnightEntity extends CharacterEntity {
+public class KnightEntity extends CharacterEntity {
     public KnightEntity(String name){
         super(name);
         this.setHp(26);

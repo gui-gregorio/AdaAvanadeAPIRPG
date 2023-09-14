@@ -1,17 +1,17 @@
 package com.example.ApiRPGAvanade.Entities.Monsters;
 
 import com.example.ApiRPGAvanade.Entities.CharacterEntity;
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="werewolf")
 @NoArgsConstructor
+@DiscriminatorValue("werewolf")
 
 
-class Werewolf extends CharacterEntity {
-    public Werewolf(String name){
+public class WerewolfEntity extends CharacterEntity {
+    public WerewolfEntity(String name){
         super(name);
         setHp(34);
         setStr(7);
